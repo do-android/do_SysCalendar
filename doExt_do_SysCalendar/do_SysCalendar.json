@@ -1,0 +1,230 @@
+{
+  "ID": "do_SysCalendar",
+  "IsContainer": "0",
+  "Type": "SM",
+  "UIType": "Layout",
+  "Name": "系统日程管理",
+  "Version": "Internal",
+  "Description": "可以获取系统日历的日程以及添加日程,修改和删除日程",
+  "Icon": "",
+  "BBS": "",
+  "Keyword": "",
+  "IOS": {
+    "Support": 1,
+    "MinVersion": "7.0"
+  },
+  "Android": {
+    "Support": 1,
+    "MinVersion": "4.0"
+  },
+  "Windows": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "WindowsPhone": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Html": {
+    "Support": 1,
+    "MinVersion": "5.0"
+  },
+  "Properties": [],
+  "Events": [],
+  "syncMethodes": [],
+  "asyncMethodes": [
+    {
+      "ID": "add",
+      "Name": "添加日程",
+      "Description": "",
+      "ReturnType": "String",
+      "ReturnType_JavaScript": "String",
+      "ReturnDesc": "返回所添加日程的唯一ID",
+      "Paras": [
+        {
+          "ID": "title",
+          "Name": "日程标题",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        },
+        {
+          "ID": "description",
+          "Name": "日程说明",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        },
+        {
+          "ID": "startTime",
+          "Name": "日程开始时间",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "long型时间",
+          "Deprecated": false
+        },
+        {
+          "ID": "endTime",
+          "Name": "日程结束时间",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "long型时间",
+          "Deprecated": false
+        },
+        {
+          "ID": "location",
+          "Name": "日程地点",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        },
+        {
+          "ID": "reminderTime",
+          "Name": "提前提醒时间",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "提前提醒时间，单位minute比如设置为60，就是在行程开始时间前一小时提醒，不填则准时提醒",
+          "Deprecated": false
+        },
+        {
+          "ID": "reminderRepeatMode",
+          "Name": "提醒重复模式,不填默认不重复",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "day:每天提醒一次，week:每周提醒一次，month:每月提醒一次，year:每年提醒一次",
+          "Deprecated": false
+        },
+        {
+          "ID": "reminderRepeatEndTime",
+          "Name": "提醒重复结束时间",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "long型时间，reminderRepeatMode设置过后该参数才有效，比如设置重复模式为Day，就是每天提醒，设置该参数后就是截止该时间停止提醒",
+          "Deprecated": false
+        }
+      ],
+      "Deprecated": false
+    },
+    {
+      "ID": "delete",
+      "Name": "根据id删除对应的日程",
+      "Description": "",
+      "ReturnType": "Bool",
+      "ReturnType_JavaScript": "Bool",
+      "ReturnDesc": "删除成功返回true，失败则返回false",
+      "Paras": [
+        {
+          "ID": "id",
+          "Name": "日程id",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        }
+      ],
+      "Deprecated": false
+    },
+    {
+      "ID": "getAll",
+      "Name": "根据所有日程信息",
+      "Description": "",
+      "ReturnType": "Node",
+      "ReturnType_JavaScript": "Node",
+      "ReturnDesc": "返回所查询到的所有日程的详细信息{id:'1',title:'日程标题',description:'日程说明',startTime:'1494460800',endTime:'1494460800',location:'北京'}，iOS平台获取当前时间前后两年的日程，其中时间单位为毫秒",
+      "Paras": [],
+      "Deprecated": false
+    },
+    {
+      "ID": "update",
+      "Name": "根据id修改对应的日程",
+      "Description": "",
+      "ReturnType": "Bool",
+      "ReturnType_JavaScript": "Bool",
+      "ReturnDesc": "修改成功返回true，失败则返回false",
+      "Paras": [
+        {
+          "ID": "id",
+          "Name": "日程id",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        },
+        {
+          "ID": "title",
+          "Name": "日程标题",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        },
+        {
+          "ID": "description",
+          "Name": "日程说明",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        },
+        {
+          "ID": "startTime",
+          "Name": "日程开始时间",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "long型时间",
+          "Deprecated": false
+        },
+        {
+          "ID": "endTime",
+          "Name": "日程结束时间",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "long型时间",
+          "Deprecated": false
+        },
+        {
+          "ID": "location",
+          "Name": "日程地点",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        }
+      ],
+      "Deprecated": false
+    }
+  ]
+}
